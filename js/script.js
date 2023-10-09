@@ -38,10 +38,31 @@ function trainPrice() {
 
 }
 
+function guess() {
+    let num = document.getElementById("guessOutput").textContent;
+    let even = document.getElementById("pari");
+    let rndNum = Math.floor((Math.random() * 9) + 1);
+    num = parseInt(num);
 
 
+    if ((((num + rndNum) % 2 === 0) && even.checked) || (((num + rndNum) % 2 === 1) && !even.checked)) {
+        document.getElementById('guessResponse').innerHTML = `Io avevo detto ${rndNum}\n Complimenti! hai vinto`;
+
+    } else {
+        document.getElementById('guessResponse').innerHTML = `Io avevo detto ${rndNum}\n Peccato, hai perso`;
+    }
+    document.getElementById('guessResponse').style = "block";
+}
 
 
+function showTime() {
+    let date = new Date();
+    let min = date.getMinutes();
+
+    document.getElementById('hourTimer').innerHTML = `mancano ancora ${60 - min} minuti alla fine dell'ora. \nLa lezione è lunga`
+    document.getElementById('hourTimer').style.display = "block";
+
+}
 
 
 

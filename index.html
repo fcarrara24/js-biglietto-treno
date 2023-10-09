@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h1>tariffario del treno</h1>
     <div class="wrapper">
         <input type="range" name="ageRange" id="ageRange" min="0" max="120" step="1" value="0"
             oninput="updateTextInput('ageRange', 'ageOutput')">
@@ -22,8 +23,30 @@
     <button id="train-submitter" onclick="trainPrice()">Calcola la tua tariffa</button>
 
     <div id="trainPrice" style="display: none; "></div>
+    <h1>pari o dispari?</h1>
+    <!-- pari o dispari -->
+    <div id="pariODispari">
+        <div class="container">
+            <input type="radio" name="pariDisp" id="pari" checked>
+            <label for="pari">pari</label>
+            <input type="radio" name="pariDisp" id="dispari">
+            <label for="dispari">dispari</label>
 
+            <div class="wrapper">
+                <input type="range" name="gessRange" id="guessRange" min="1" max="9" step="1" value="1"
+                    oninput="updateTextInput('guessRange', 'guessOutput')">
+                <label for="guessRange"> selezionare un numero <output id="guessOutput">1</output></label>
+            </div>
+            <button id="guess-submitter" onclick="guess()">Tenta</button>
 
+            <div id="guessResponse" style="display: none;"></div>
+        </div>
+    </div>
+    <h1>orario</h1>
+    <div id="orario">
+        <button onclick="showTime()">mosta quanti minuti mancano alla prossima ora</button>
+        <div id="hourTimer" style="display: none;"></div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 

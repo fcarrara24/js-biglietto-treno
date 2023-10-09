@@ -8,8 +8,24 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <input type="range" name="ageRange" id="ageRange" min="0" max="120" step="1" value="0"
+            oninput="updateTextInput('ageRange', 'ageOutput')">
+        <label for="ageRange">Seleziona la tua età: <output id="ageOutput"></output></label>
+    </div>
+    <div class="wrapper">
+        <input type="range" name="spaceRange" id="spaceRange" min="0" max="200" step="1" value="0"
+            oninput="updateTextInput('spaceRange', 'spaceOutput')">
 
+        <label for="spaceRange">Seleziona la lunghezza in km del tuo tragitto <output id="spaceOutput"></output></label>
+    </div>
+    <button id="train-submitter" onclick="trainPrice()">Calcola la tua tariffa</button>
+
+    <div id="trainPrice" style="display: none; "></div>
+
+
+    <script src="js/script.js"></script>
 </body>
-<script src="js/script.js"></script>
+
 
 </html>
